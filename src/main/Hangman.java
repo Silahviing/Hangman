@@ -3,56 +3,24 @@ package main;
 import java.util.*;
 
 public class Hangman {
-    public static void main(String[] args) {
 
-        //listing word to guess
-        List<String> list = new ArrayList<>();
+    //listing word to guess
+    static List<String> list = new ArrayList<>();
 
-        list.add("Käseplatte");
-        list.add("Schifffahrtsgesellschaft");
-        list.add("Schreibblockade");
-        list.add("Autobahn");
-        list.add("Schokolade");
-        list.add("Programmieren");
-        list.add("Wettervorhersage");
-        list.add("Markdown");
-        list.add("Avengers");
-        list.add("Wasserflasche");
-        list.add("Churchill");
-        list.add("Zircuszelt");
-        list.add("Regenbogen");
-        list.add("Kokosnusspalme");
-        list.add("Datenbanken");
-        list.add("Höhlenmensch");
-        list.add("Microsoft");
-        list.add("Wildwasserrafting");
-        list.add("Bruttosozialprodukt");
-        list.add("Ölüberschussmesser");
-        list.add("Wühlmaus");
-        list.add("Müslischüssel");
-        list.add("Kaffeevollautomat");
-        list.add("DeutscheBahn");
-        list.add("Leberkäswecken");
-        list.add("Tunfischfilet");
-        list.add("Karamellbonbon");
+    static Hangman obj = new Hangman();
+    //creating a list for the letters already guessed
+    static List<Character> alreadyGuessed = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+    static boolean gameIsRunning = true;
 
-        Hangman obj = new Hangman();
-
-        //creating a list for the letters already guessed
-        List<Character> alreadyGuessed = new ArrayList<>();
-
-        Scanner scanner = new Scanner(System.in);
-
-        boolean gameIsRunning = true;
+    public static void game() {
 
         //the actual game:
         while (gameIsRunning){
-            System.out.println("---------------------------------\n      HANGMAN - The Return\n---------------------------------");
-            System.out.println(" ");
-            System.out.println("Have fun!\nOnly ever enter one letter! If you enter more, the game will not register the second one.\nIf you know the word before having all the letters, then enter a '!' to enter the whole word.");
 
             //getting random word
             String word = (obj.getRandomElement(list));
+
             word = word.toUpperCase();
             char[] wordArray = word.toCharArray();
 
@@ -194,6 +162,10 @@ public class Hangman {
             }
         }
     }
+    public void addWord(String word){
+        list.add(word);
+    }
+
     //Method to get a random element
     public String getRandomElement(List<String> list){
         Random rand = new Random();
@@ -201,8 +173,10 @@ public class Hangman {
     }
     //method to make sure if the word is guessed by looking for _
     public static boolean isTheWordGuessed(char[] array){
-        for(int i =0; i < array.length; i++){
-            if(array[i] == '_') {return false;}
+        for (char c : array) {
+            if (c == '_') {
+                return false;
+            }
         }
         return true;
     }
@@ -211,9 +185,9 @@ public class Hangman {
         //buffer for temporal storage
         String buffer = "";
 
-        for (int i = 0; i<arr.length;i++){
+        for (char c : arr) {
             //adding every letter in an array to the string
-            buffer += arr[i];
+            buffer += c;
         }
         return buffer;  //return the string
     }
