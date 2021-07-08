@@ -22,7 +22,7 @@ Silahviing/Hangman
             boolean wordIsGuessed = false;
             int tries = 10;
 
-> This a the getRandomElement() function:
+> This is the getRandomElement() function:
 
 
         public String getRandomElement(List<String> list){
