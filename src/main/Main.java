@@ -3,20 +3,22 @@ package main;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args){
 
-        Hangman hgm = new Hangman();
+    public static void main(String[] args){
 
         System.out.println("---------------------------------\n      HANGMAN - The Return\n---------------------------------");
         System.out.println(" ");
-        System.out.println("Have fun!\nOnly ever enter one letter! If you enter more, the game will not register the second one.\nIf you know the word before having all the letters, then enter a '!' to enter the whole word.");
-        System.out.println("But first, choose a language: english? or german? (The interface stays english)");
+        System.out.println("What language do you want? English or german?");
 
         Scanner scanner = new Scanner(System.in);
+        String lang = scanner.nextLine();
 
-        String language = scanner.nextLine();
+        Hangman hgm = new Hangman(lang);
 
-        if(language.equals("english")){
+        if(lang.equals("english")){
+
+            System.out.println("Have fun!\nOnly ever enter one letter! If you enter more, the game will not register the second one.\nIf you know the word before having all the letters, then enter a '!' to enter the whole word.");
+
             hgm.addWord("Cheeseburger");
             hgm.addWord("Beekeeper");
             hgm.addWord("Jukebox");
@@ -29,22 +31,31 @@ public class Main {
             hgm.addWord("Zigzagging");
             hgm.addWord("Pneumonia");
             hgm.addWord("Tournament");
-            hgm.addWord("Swimmingpool");
-            hgm.addWord("Coconutpalm");
+            hgm.addWord("Swimming");
+            hgm.addWord("Coconut");
             hgm.addWord("Columbia");
             hgm.addWord("Hangman");
             hgm.addWord("Microsoft");
             hgm.addWord("Management");
-            hgm.addWord("Weatherstation");
+            hgm.addWord("Weather");
             hgm.addWord("Colourful");
             hgm.addWord("Broadway");
-            hgm.addWord("Müslischüssel");
+            hgm.addWord("Keyboard");
             hgm.addWord("Strengths");
             hgm.addWord("Psychotomimetic");
             hgm.addWord("Connecticut");
             hgm.addWord("Electrodynamo");
-            hgm.addWord("Caramellbonbon");
-        } else if(language.equals("german")){
+            hgm.addWord("Caramell");
+            hgm.addWord("Jazz");
+            hgm.addWord("Philadelphia");
+            hgm.addWord("Indianapolis");
+            hgm.addWord("electroluminescences");
+            hgm.addWord("uncharacteristically");
+
+        } else if(lang.equals("german")){
+
+            System.out.println("Viel Spaß!\nBitte immer nur einen Buchstaben eingeben! Wenn mehr als einer engegeben werden, merkt es das Spiel nicht.\nWenn du das Wort schon weißt bevor alle Buchstaben erraten wurden, gib ein '!' ein.");
+
             hgm.addWord("Käseplatte");
             hgm.addWord("Schifffahrtsgesellschaft");
             hgm.addWord("Schreibblockade");
@@ -72,8 +83,12 @@ public class Main {
             hgm.addWord("Leberkäswecken");
             hgm.addWord("Tunfischfilet");
             hgm.addWord("Karamellbonbon");
+            hgm.addWord("Schreibwarengeschäft");
+            hgm.addWord("Leuchtturmwärter");
+            hgm.addWord("Schulausflug");
+            hgm.addWord("Kugelschreibermiene");
+            hgm.addWord("Rollmops");
         }
-
         Hangman.game();
     }
 }
