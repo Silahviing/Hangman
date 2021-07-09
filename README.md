@@ -1,9 +1,10 @@
 # Hangman
-Silahviing/Hangman
+
+currently still a work in progress... many things are not yet added
 
 ## Introduction
 
-> This simple Hangman game is helping me learn java and object-oriented programming. Though I don't know how to work with different classen yet...
+> This simple Hangman game is helping me learn java and object-oriented programming. Though I'm still learing how to work with classes...
 
 ## Code Samples
 
