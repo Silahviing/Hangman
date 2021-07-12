@@ -17,7 +17,7 @@ public class Main {
 
         if(lang.equals("english")){
 
-            System.out.println("Have fun!\nOnly ever enter one letter! If you enter more, the game will not register the second one.\nIf you know the word before having all the letters, then enter a '!' to enter the whole word.");
+            System.out.println("Have fun!\nOnly ever enter one letter! If you enter more, the game will not register the second one.\nIf you know the word before having all the letters, then enter a '!' to enter the whole word.\nEnter a '-' to exit.");
 
             hgm.addWord("Cheeseburger");
             hgm.addWord("Beekeeper");
@@ -54,7 +54,7 @@ public class Main {
 
         } else if(lang.equals("german")){
 
-            System.out.println("Viel Spaß!\nBitte immer nur einen Buchstaben eingeben! Wenn mehr als einer engegeben werden, merkt es das Spiel nicht.\nWenn du das Wort schon weißt bevor alle Buchstaben erraten wurden, gib ein '!' ein.");
+            System.out.println("Viel Spaß!\nBitte immer nur einen Buchstaben eingeben! Wenn mehr als einer engegeben werden, merkt es das Spiel nicht.\nWenn du das Wort schon weißt bevor alle Buchstaben erraten wurden, gib ein '!' ein. Gib ein '-' ein um das Spiel zu schließen.");
 
             hgm.addWord("Käseplatte");
             hgm.addWord("Schifffahrtsgesellschaft");

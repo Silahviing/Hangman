@@ -65,13 +65,12 @@ public class Hangman {
                 inputChar = toUpperCase(inputChar);
                 String inputString = String.valueOf(inputChar);
 
+                boolean isChar = Character.isLetter(inputChar);
+
                 //making sure users only enter letters
-                //i need to find a better way to do this...
-                if (inputChar == 'A'|inputChar == 'B'|inputChar == 'C'|inputChar == 'D'|inputChar == 'E'|inputChar == 'F'|inputChar == 'G'|inputChar == 'H'|inputChar == 'I'|inputChar == 'J'|inputChar == 'K'|inputChar == 'L'|inputChar == 'M'|inputChar == 'N'|inputChar == 'O'|inputChar == 'P'|
-                        inputChar == 'Q'|inputChar == 'R'|inputChar == 'S'|inputChar == 'T'|inputChar == 'U'|inputChar == 'V'|inputChar == 'W'|inputChar == 'X'|inputChar == 'Y'|inputChar == 'Z'|inputChar == 'Ä'|inputChar == 'Ö'|inputChar == 'Ü'|inputChar == '!'){
+                if (isChar | inputChar == '!'){
                     if (inputChar == '-'){
 
-                        //this is here for reasons
                         gameIsRunning = false;
                         wordIsGuessed = true;
 
